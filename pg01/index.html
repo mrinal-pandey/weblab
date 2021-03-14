@@ -1,0 +1,38 @@
+<!-- Write a JavaScript to design a simple calculator to perform the following operations: sum, product,
+difference and quotient. -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calculator</title>
+	</head>
+	<body>
+		<h1>Calculator</h1>
+		<form method="get">
+			<label>Number 1 : <input type="text" id="num1"></input></label>
+			<label>Number 2 : <input type="text" id="num2"></input></label>
+			<input type="button" value="+" id="add" onclick="calculate(this.id)">
+			<input type="button" value="-" id="sub" onclick="calculate(this.id)">
+			<input type="button" value="*" id="mul" onclick="calculate(this.id)">
+			<input type="button" value="/" id="div" onclick="calculate(this.id)">
+			<p id="result"></p>
+		</form>
+		<script type="text/javascript">
+			function calculate(operation) {
+				var num1 = parseFloat(document.getElementById("num1").value);
+				var num2 = parseFloat(document.getElementById("num2").value);
+				if(isNaN(num1) || isNaN(num2)) {
+					alert("Enter a valid number");
+				} else if (operation == "add") {
+					document.getElementById("result").innerHTML = "Result is " + (num1 + num2);
+				} else if (operation == "sub") {
+					document.getElementById("result").innerHTML = "Result is " + (num1 - num2);
+				} else if (operation == "mul") {
+					document.getElementById("result").innerHTML = "Result is " + (num1 * num2);
+				} else if (operation == "div") {
+					document.getElementById("result").innerHTML = "Result is " + (num1 / num2);
+				}
+			}
+		</script>
+	</body>
+</html>

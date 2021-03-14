@@ -1,0 +1,32 @@
+<!-- Write a JavaScript code that displays text “TEXT-GR OWING” with increasing font size in the interval of 100ms in RED COLOR, when the font size reaches 50pt it displays “TEXT-SHRINKING” in BLUE color. Then the f ont size decreases to 5pt. -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Animation</title>
+	</head>
+	<body>
+		<p id="result"></p>
+		<script type="text/javascript">
+			var size = 5;
+			setInterval(increaseTimer, 100);
+			function increaseTimer() {
+				document.getElementById("result").innerHTML = "Text Growing";
+				document.getElementById("result").setAttribute("style", "font-size:" + size + "pt; color: red;");
+				size += 5;
+				if(size >= 50) {
+					clearInterval(increaseTimer);
+					setInterval(decreaseTimer, 100);
+				}
+			}
+			function decreaseTimer() {
+				document.getElementById("result").innerHTML = "Text Shrinking";
+				document.getElementById("result").setAttribute("style", "font-size:" + size + "pt; color: blue;");
+				size -= 5;
+				if(size <= 5) {
+					clearInterval(decreaseTimer);
+				}
+			}
+		</script>
+	</body>
+</html>

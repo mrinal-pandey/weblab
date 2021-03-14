@@ -1,0 +1,20 @@
+student, USN, name, college, branch, year, email {
+    display: block;
+    margin: 10px;
+    padding: 2px;
+    font-size: 1.2rem;
+    color:#393e46;
+}
+
+doctitle {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+student {
+    background-color: #32e0c4;
+}
+
+USN {
+    font-size: 1.5rem;   
+}
